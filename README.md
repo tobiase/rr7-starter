@@ -2,7 +2,7 @@
 
 A modern, production-ready template for building full-stack React applications using React Router.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/tobiase/rr7-starter/tree/main/default)
 
 ## Features
 
@@ -16,12 +16,23 @@ A modern, production-ready template for building full-stack React applications u
 
 ## Getting Started
 
+### Starting a New Project with degit
+
+You can quickly create a new project from this repository using [degit](https://github.com/Rich-Harris/degit). Run the following commands:
+
+```bash
+npx degit tobiase/rr7-starter my-new-project
+cd my-new-project
+pnpm install
+pnpm run dev
+```
+
 ### Installation
 
 Install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
@@ -29,7 +40,7 @@ npm install
 Start the development server with HMR:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
@@ -39,7 +50,7 @@ Your application will be available at `http://localhost:5173`.
 Create a production build:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ## Deployment
@@ -93,7 +104,37 @@ Make sure to deploy the output of `npm run build`
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience.
+
+Additionally, this project integrates [shadcn UI](https://ui.shadcn.com) for a complete design system and prebuilt components. Its integration offers:
+
+- Tailwind configuration enhancements in `app/app.css` including custom theming and dark mode support.
+- Utility functions (e.g. `cn` in `app/lib/utils.ts`) to manage and merge Tailwind classes with ease.
+- A component configuration file (`components.json`) that harmonizes component styling.
+
+Check out the shadcn UI documentation for advanced customizations.
+
+## Biome Integration
+
+This project uses [Biome](https://biomejs.dev) for code formatting, linting, and organizing imports. The configuration is defined in the [biome.jsonc](biome.jsonc) file. It enhances code consistency by:
+
+- Auto formatting on save
+- Automatic organization of imports
+- Enforcing custom linting rules (e.g. sorted classes in utilities like tv, twMerge, cn, or clsx)
+
+For VS Code users, our configuration in [.vscode/settings.json](.vscode/settings.json) and the recommended extensions in [.vscode/extensions.json](.vscode/extensions.json) ensure Biome works out-of-the-box. If you use another editor, refer to the [Biome documentation](https://biomejs.dev) for setup instructions.
+
+## Lefthook Integration
+
+This project employs [Lefthook](https://github.com/evilmartians/lefthook) to automate Git hooks. The pre-commit hook runs Biome linting and formatting checks on staged files, ensuring code consistency before commits.
+
+Additionally, post-merge and post-checkout hooks (configured in [lefthook.yml](lefthook.yml)) reinstall dependencies and clear the Vite cache for a smooth development experience.
+
+To install these hooks, run:
+
+```bash
+pnpm hookinstall
+```
 
 ---
 
