@@ -1,0 +1,4 @@
+{
+  "recommendations": ["biomejs.biome", "naumovs.color-highlight", "soulcode.vscode-unwanted-extensions"],
+  "unwantedRecommendations": ["heybourn.headwind"]
+}

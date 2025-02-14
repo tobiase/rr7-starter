@@ -1,9 +1,9 @@
-import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
+import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ location }: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: `New React Router App - ${location.pathname}` },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }

@@ -18,6 +18,7 @@
     "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@react-router/dev": "^7.1.5",
     "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^20",
@@ -29,11 +30,6 @@
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
   },
   "config": {
     "commitizen": {
